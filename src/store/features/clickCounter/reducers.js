@@ -2,7 +2,7 @@ import types from './types';
 import { createDefaultReducer } from '../../helpers'
 
 const initialState = {
-  number: 0
+  number: 3
 };
 
 const incrementNumberHandler = (state, payload) => {
