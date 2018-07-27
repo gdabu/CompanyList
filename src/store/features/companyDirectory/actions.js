@@ -7,6 +7,14 @@ function addCompany(newCompany) {
   };
 }
 
+function selectCompany(company) {
+  return {
+    type: types.SELECT_COMPANY,
+    payload: company,
+  };
+}
+
 export default {
   addCompany,
+  selectCompany,
 };

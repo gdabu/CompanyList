@@ -7,14 +7,38 @@ const propTypes = {
 };
 
 class CompanyAddition extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+
+    const formData = {};
+    for (const field in this.refs) {
+      formData[field] = this.refs[field].value;
+    }
+
+    this.props.addCompany(formData);
+  }
+
   render() {
-    const {	addCompany } = this.props;
+    // const {	addCompany } = this.props;
     return (
-      <button onClick={() => addCompany({ name: 'amazon', address: 'argyle st.' })} >add company</button>
+      <React.Fragment>
+        {/* Look into redux form */}
+        <form onSubmit={this.handleSubmit}>
+          <input ref="name" type="text" name="name" />
+          <input ref="address" type="text" name="address" />
+          <input ref="revenue" type="text" name="revenue" />
+          <input ref="phone" type="tel" name="phone" />
+
+          <input type="submit" value="Submit" />
+        </form>
+      </React.Fragment>
     );
   }
 }
-
 
 CompanyAddition.propTypes = propTypes;
 export default CompanyAddition;

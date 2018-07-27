@@ -1,8 +1,9 @@
 import React from 'react';
+import CompanyDetails from 'containers/CompanyDetails';
 
 function DetailsPage() {
   return (
-    <div>Code for the Details Page goes here</div>
+    <CompanyDetails />
   );
 }
 

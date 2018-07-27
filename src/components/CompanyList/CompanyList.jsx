@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import './styles.less';
 
 const propTypes = {
-  number: PropTypes.number,
+  companies: PropTypes.array,
 };
 
-function CompanyList({ companies }) {
+function CompanyList({ companies, selectCompany }) {
   return (
     <React.Fragment>
       <ul>
-        {companies.map(company => <li key={company.name}>{company.name} - {company.address}</li>)}
+        {companies.map(company => <li onClick={() => selectCompany(company)} key={company.name}>{company.name} - {company.address}</li>)}
       </ul>
     </React.Fragment>
   );
