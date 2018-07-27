@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './styles.less';
+import CompanyList from '../../containers/CompanyList';
 
 const propTypes = {
   increment: PropTypes.func.isRequired,
@@ -24,7 +25,9 @@ class HomePage extends Component {
             <button	onClick={resetNumberToZero}>
 							Reset Number
             </button>
+
           </div>
+          <CompanyList />
           <div>
 						Code for Homepage goes here!
           </div>
