@@ -10,7 +10,7 @@ function CompanyList({ companies }) {
   return (
     <React.Fragment>
       <ul>
-        {companies.map(company => <li>{company.name} - {company.address}</li>)}
+        {companies.map(company => <li key={company.name}>{company.name} - {company.address}</li>)}
       </ul>
     </React.Fragment>
   );

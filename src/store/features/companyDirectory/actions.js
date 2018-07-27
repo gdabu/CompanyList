@@ -2,7 +2,7 @@ import types from './types';
 
 function addCompany() {
   return {
-    type: types.INCREMENT_NUMBER,
+    type: types.ADD_COMPANY,
   };
 }
 
