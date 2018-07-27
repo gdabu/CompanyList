@@ -1,8 +1,9 @@
 import types from './types';
 
-function addCompany() {
+function addCompany(newCompany) {
   return {
     type: types.ADD_COMPANY,
+    payload: newCompany,
   };
 }
 

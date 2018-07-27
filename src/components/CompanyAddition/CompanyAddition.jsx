@@ -10,7 +10,7 @@ class CompanyAddition extends Component {
   render() {
     const {	addCompany } = this.props;
     return (
-      <button onClick={addCompany} >add company</button>
+      <button onClick={() => addCompany({ name: 'amazon', address: 'argyle st.' })} >add company</button>
     );
   }
 }

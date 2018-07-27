@@ -9,7 +9,7 @@ const initialState = {
 
 const addCompany = (state, payload) => ({
   ...state,
-  companies: state.companies.concat({ name: 'amazon', address: 'argyle st.' }),
+  companies: state.companies.concat(payload),
 });
 
 const actionMap = {
