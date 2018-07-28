@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Menu } from 'semantic-ui-react';
 import HomePage from 'containers/HomePage';
 import DetailsPage from 'components/DetailsPage';
 import NumberPage from 'containers/NumberPage';
@@ -10,27 +11,29 @@ class App extends Component {
     return (
       <Router>
         <React.Fragment>
-          <div className="app__header">
-            <div className="app__header-title">
-              LMNOP LLC.
-            </div>
-            <div className="app__nav-wrapper">
-              <div className="app__header-nav">
-                <span className="app__nav-link">
-                  <Link to="/">Home</Link>
-                </span>
-                <span className="app__nav-link">
-                  <Link to="/details">Details</Link>
-                </span>
-                <span className="app__nav-link">
-                  <Link to="/number">Number</Link>
-                </span>
-              </div>
-            </div>
-          </div>
+
+          <Menu stackable>
+            <Menu.Item>
+              <img src="../../../public/wellin5_icon.svg" />
+            </Menu.Item>
+
+            <Menu.Item
+              name="features"
+            >
+              <Link to="/">Home</Link>
+            </Menu.Item>
+
+            <Menu.Item
+              name="testimonials"
+            >
+              <Link to="/details">Details</Link>
+            </Menu.Item>
+
+
+          </Menu>
+
           <Route exact path="/" component={HomePage} />
           <Route path="/details" component={DetailsPage} />
-          <Route path="/number" component={NumberPage} />
         </React.Fragment>
       </Router>
     );

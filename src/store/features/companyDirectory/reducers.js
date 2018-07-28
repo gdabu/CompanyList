@@ -3,7 +3,9 @@ import { createDefaultReducer } from '../../helpers';
 
 const initialState = {
   companies: [
-    { name: 'google', address: '999 homer dr.' },
+    {
+      name: 'google', address: '999 homer dr.', revenue: '10000', phone: '(604) 654-1234',
+    },
   ],
   selectedCompany: null,
 };
