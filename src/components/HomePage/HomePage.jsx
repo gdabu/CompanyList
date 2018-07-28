@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import './styles.less';
 import CompanyList from '../../containers/CompanyList';
 import CompanyAddition from '../../containers/CompanyAddition';
+import EmployeeAddition from '../../containers/EmployeeAddition';
 import CompanyDetails from '../../containers/CompanyDetails';
+
 import { Grid } from '../../../node_modules/semantic-ui-react';
 
 const propTypes = {
@@ -22,7 +24,7 @@ class HomePage extends Component {
 
           <div className="ui stackable mobile reversed twelve column centered grid">
             <div className="nine wide column" ><CompanyList /></div>
-            <div className="three wide column" ><CompanyAddition /></div>
+            <div className="three wide column" ><CompanyAddition /><EmployeeAddition /></div>
           </div>
 
         </div>

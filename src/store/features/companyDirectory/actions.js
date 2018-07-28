@@ -7,6 +7,13 @@ function addCompany(newCompany) {
   };
 }
 
+function addEmployee(newEmployee, selectedCompany) {
+  return {
+    type: types.ADD_EMPLOYEE,
+    payload: { employee: newEmployee, company: selectedCompany },
+  };
+}
+
 function selectCompany(company) {
   return {
     type: types.SELECT_COMPANY,
@@ -17,4 +24,5 @@ function selectCompany(company) {
 export default {
   addCompany,
   selectCompany,
+  addEmployee,
 };

@@ -20,12 +20,12 @@ class CompanyAddition extends Component {
     for (const field in this.refs) {
       formData[field] = this.refs[field].value;
     }
+    formData.employees = [];
 
     this.props.addCompany(formData);
   }
 
   render() {
-    // const {	addCompany } = this.props;
     return (
       <React.Fragment>
         <Container>
