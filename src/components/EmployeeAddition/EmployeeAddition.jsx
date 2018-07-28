@@ -26,7 +26,6 @@ class EmployeeAddition extends Component {
       }
     }
 
-
     this.props.addEmployee(newEmployee, selectedCompany);
   }
 
