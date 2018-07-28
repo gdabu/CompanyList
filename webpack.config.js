@@ -27,6 +27,7 @@ module.exports = {
   devtool: 'eval-source-map',
   module: {
     loaders: [
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,

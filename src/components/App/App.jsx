@@ -14,7 +14,7 @@ class App extends Component {
 
           <Menu stackable>
             <Menu.Item>
-              <img src="../../../public/wellin5_icon.svg" />
+              <img src={require('../../../public/wellin5_logo.png')} />
             </Menu.Item>
 
             <Menu.Item
