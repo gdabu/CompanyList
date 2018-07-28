@@ -9,7 +9,7 @@ module.exports = {
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   resolve: {
     modules: ['node_modules', 'src'],
@@ -17,12 +17,12 @@ module.exports = {
     alias: {
       react: path.resolve(__dirname, 'node_modules', 'react'),
       components: path.resolve(__dirname, 'src/components'),
-    }
+    },
   },
   devServer: {
     historyApiFallback: true,
     compress: true,
-    port: 8080
+    port: process.env.PORT || 8080,
   },
   devtool: 'eval-source-map',
   module: {
@@ -34,9 +34,9 @@ module.exports = {
         options: {
           presets: [
             'react',
-            'env'
-          ]
-        }
+            'env',
+          ],
+        },
       },
       {
         test: /\.(css|less)$/,
@@ -45,18 +45,18 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
             loader: 'less-loader',
             options: {
-              sourceMap: true
-            }
-          }
-        ]
-      }
-    ]
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -81,7 +81,7 @@ module.exports = {
         removeComments: true,
         collapseWhitespace: true,
       },
-      inject: true
+      inject: true,
     }),
-  ]
+  ],
 };
