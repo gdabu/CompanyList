@@ -21,7 +21,7 @@ function CompanyDetails({ selectedCompany }) {
             </Card.Content>
             <Card.Content extra>
               <Icon name="users" />
-              4 Friends
+              {selectedCompany.employees.length} Employees
             </Card.Content>
           </Card>
         </Container>

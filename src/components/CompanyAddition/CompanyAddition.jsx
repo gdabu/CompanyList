@@ -5,6 +5,7 @@ import './styles.less';
 
 
 const propTypes = {
+  companies: PropTypes.array.isRequired,
   addCompany: PropTypes.func.isRequired,
 };
 
@@ -16,13 +17,25 @@ class CompanyAddition extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const formData = {};
-    for (const field in this.refs) {
-      formData[field] = this.refs[field].value;
-    }
-    formData.employees = [];
 
-    this.props.addCompany(formData);
+    const newCompany = {};
+    for (const field in this.refs) {
+      newCompany[field] = this.refs[field].value;
+    }
+    newCompany.employees = [];
+
+    let companyExists = false;
+    for (let i = 0; i < this.props.companies.length; i++) {
+      if (this.props.companies[i].name === newCompany.name) {
+        companyExists = true;
+      }
+    }
+
+    if (companyExists === false) {
+      this.props.addCompany(newCompany);
+    } else {
+      window.alert('Company already exists');
+    }
   }
 
   render() {
@@ -33,19 +46,19 @@ class CompanyAddition extends Component {
           <Form onSubmit={this.handleSubmit}>
             <Form.Field>
               <label>Name:</label>
-              <input ref="name" type="text" name="name" />
+              <input ref="name" type="text" name="name" required />
             </Form.Field>
             <Form.Field>
               <label>Address:</label>
-              <input ref="address" type="text" name="address" />
+              <input ref="address" type="text" name="address" required />
             </Form.Field>
             <Form.Field>
               <label>Revenue:</label>
-              <input ref="revenue" type="text" name="revenue" />
+              <input ref="revenue" type="text" name="revenue" required />
             </Form.Field>
             <Form.Field>
               <label>Phone:</label>
-              <input ref="phone" type="tel" name="phone" />
+              <input ref="phone" type="tel" name="phone" required />
             </Form.Field>
             <Button type="submit">Add</Button>
           </Form>

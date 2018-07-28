@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
   addEmployee: PropTypes.func.isRequired,
+  companies: PropTypes.array,
 };
 
 class EmployeeAddition extends Component {
@@ -29,6 +30,7 @@ class EmployeeAddition extends Component {
     this.props.addEmployee(newEmployee, selectedCompany);
   }
 
+
   render() {
     return (
       <React.Fragment>
@@ -37,17 +39,21 @@ class EmployeeAddition extends Component {
           <Form onSubmit={this.handleSubmit}>
             <Form.Field>
               <label>Name:</label>
-              <input ref="name" type="text" name="employeeName" />
+              <input ref="name" type="text" name="employeeName" required />
             </Form.Field>
             <Form.Field>
               <label>Address:</label>
-              <input ref="address" type="text" name="employeeAddress" />
+              <input ref="address" type="text" name="employeeAddress" required />
             </Form.Field>
             <Form.Field>
-              <label>Phone:</label>
+              <label>Company:</label>
               <select ref="company" name="company">
-                <option data-value={{ name: 'google' }}>google</option>
-                <option data-value={{ name: 'amazon' }}>amazon</option>
+
+                {
+                  this.props.companies.map(company => (
+                    <option data-value={{ name: company.name }}>{company.name}</option>
+                  ))
+                }
               </select>
             </Form.Field>
             <Button type="submit">Add</Button>
