@@ -25,7 +25,7 @@ function CompanyList({ companies, selectCompany }) {
               </Card.Content>
               <Card.Content extra>
                 <Icon name="users" />
-              4 Friends
+                {company.employees.length} Employees
               </Card.Content>
             </Card>
 
