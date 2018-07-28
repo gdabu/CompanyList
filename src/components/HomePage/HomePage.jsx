@@ -4,6 +4,7 @@ import './styles.less';
 import CompanyList from '../../containers/CompanyList';
 import CompanyAddition from '../../containers/CompanyAddition';
 import CompanyDetails from '../../containers/CompanyDetails';
+import { Grid } from '../../../node_modules/semantic-ui-react';
 
 const propTypes = {
   increment: PropTypes.func.isRequired,
@@ -17,24 +18,13 @@ class HomePage extends Component {
     return (
       <React.Fragment>
         <div className="home__wrapper">
-          <div className="home__abacus">
-            <button	onClick={increment}>
-							Increment
-            </button>
-            <button	onClick={decrement}>
-							Decrement
-            </button>
-            <button	onClick={resetNumberToZero}>
-							Reset Number
-            </button>
 
+
+          <div className="ui stackable mobile reversed twelve column centered grid">
+            <div className="nine wide column" ><CompanyList /></div>
+            <div className="three wide column" ><CompanyAddition /></div>
           </div>
-          <CompanyAddition />
-          <CompanyList />
-          <CompanyDetails />
-          <div>
-						Code for Homepage goes here!
-          </div>
+
         </div>
       </React.Fragment>
     );

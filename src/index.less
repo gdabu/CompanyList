@@ -1,33 +1,47 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
-  font-size: 62.5%;
+// body {
+//   margin: 0;
+//   padding: 0;
+//   font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+//   font-size: 62.5%;
+// }
+
+// a {
+//   transition: color .4s, font-weight .8s;
+// }
+
+// a:link    {
+//   /* Applies to all unvisited links */
+//   text-decoration:  none;
+//   font-weight:      bold;
+//   color:            #0E34A0;
+// }
+
+// a:visited {
+//   /* Applies to all visited links */
+//   text-decoration:  none;
+//   color:            #0E34A0;
+// }
+// a:hover   {
+//   /* Applies to links under the pointer */
+//   font-weight:      bold;
+//   color:            white;
+// }
+// a:active  {
+//   /* Applies to activated links */
+//   font-weight:      bold;
+//   color: white;
+// }
+
+.ui.grid{
+  padding:15px;
 }
 
-a {
-  transition: color .4s, font-weight .8s;
+.ui.card{
+  width: 500px;
 }
 
-a:link    {
-  /* Applies to all unvisited links */
-  text-decoration:  none;
-  font-weight:      bold;
-  color:            #0E34A0;
-}
-
-a:visited {
-  /* Applies to all visited links */
-  text-decoration:  none;
-  color:            #0E34A0;
-}
-a:hover   {
-  /* Applies to links under the pointer */
-  font-weight:      bold;
-  color:            white;
-}
-a:active  {
-  /* Applies to activated links */
-  font-weight:      bold;
-  color: white;
+@media only screen and (max-width: 500px) {
+  .ui.card{
+    width: 290px;
+  }
 }
