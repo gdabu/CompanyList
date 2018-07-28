@@ -6,8 +6,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.prod.config.js",
-    "dev": "webpack-dev-server --hot --inline",
-    // "start": "webpack-dev-server"
+    "dev": "webpack-dev-server --hot --inline"
   },
   "engines": {
     "npm": "6.2.0",
