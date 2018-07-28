@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "./node_modules/webpack/bin/webpack.js -p --progress && node server.js",
-    "dev": "webpack-dev-server"
+    "build": "webpack --config webpack.prod.config.js",
+    "dev": "webpack-dev-server --hot --inline"
   },
   "engines": {
     "npm": "6.2.1",
