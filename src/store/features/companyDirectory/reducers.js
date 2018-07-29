@@ -8,6 +8,7 @@ const initialState = {
       address: '999 homer dr.',
       revenue: '10000',
       phone: '(604) 654-1234',
+      selected: false,
       employees: [
         {
           name: 'Geoff Dabu',

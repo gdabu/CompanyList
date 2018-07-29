@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
   addEmployee: PropTypes.func.isRequired,
-  companies: PropTypes.array,
+  companies: PropTypes.array.isRequired,
 };
 
 class EmployeeAddition extends Component {
@@ -21,11 +21,11 @@ class EmployeeAddition extends Component {
     for (const field in this.refs) {
       if (field !== 'company') {
         newEmployee[field] = this.refs[field].value;
-      } else {
-        selectedCompany = this.refs[field].value;
       }
     }
 
+
+    selectedCompany = this.refs.company.value;
     this.props.addEmployee(newEmployee, selectedCompany);
   }
 
@@ -50,7 +50,7 @@ class EmployeeAddition extends Component {
 
                 {
                   this.props.companies.map(company => (
-                    <option data-value={{ name: company.name }}>{company.name}</option>
+                    <option data-value={{ company }}>{company.name}</option>
                   ))
                 }
               </select>
