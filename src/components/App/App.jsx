@@ -11,25 +11,19 @@ class App extends Component {
     return (
       <Router>
         <React.Fragment>
-
           <Menu stackable>
+            
             <Menu.Item>
               <img src={require('../../../public/wellin5_logo.png')} />
             </Menu.Item>
-
-            <Menu.Item
-              name="features"
-            >
+            
+            <Menu.Item name="features">
               <Link to="/">Home</Link>
             </Menu.Item>
 
-            <Menu.Item
-              name="testimonials"
-            >
+            <Menu.Item name="testimonials">
               <Link to="/details">Details</Link>
             </Menu.Item>
-
-
           </Menu>
 
           <Route exact path="/" component={HomePage} />
